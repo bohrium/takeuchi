@@ -17,9 +17,10 @@ class QuadraticGauss(PointedLandscape):
 
         self.reset_weights()
 
-    def reset_weights(self):
+    def reset_weights(self, offset=True):
         self.weights = np.zeros(self.dim, dtype=np.float32) 
-        #self.weights[0] = 1.0
+        if offset:
+            self.weights[0] = 1.0
 
     def update_weights(self, displacement):
         self.weights += displacement
@@ -41,3 +42,6 @@ class QuadraticGauss(PointedLandscape):
 
     def hess_at(self, data): 
         return self.hess
+
+    def jerk_at(self, data): 
+        return np.zeros((self.dim, self.dim, self.dim), dtype=np.float32)

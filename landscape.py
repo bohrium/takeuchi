@@ -1,7 +1,7 @@
 ''' author: samtenka
     change: 2019-09-30
     create: 2019-09-30
-    descrp: takeuchi on toy landscapes
+    descrp: interface for toy landscapes
 '''
 
 import numpy as np
@@ -42,5 +42,10 @@ class PointedLandscape(ABC):
     @abstractmethod
     def hess_at(self, data): 
         ''' give average hess on data (matrix) --- or test hess if data is None. '''
+        pass
+
+    @abstractmethod
+    def jerk_at(self, data): 
+        ''' give average 3rd derivative on data (matrix) --- or test value if data is None. '''
         pass
 
