@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[top=1.5in, bottom=1.5in, left=1.5in, right=1.5in]{geometry}
+
+\begin{document}
+    \begin{center}
+        \Large
+        Sharp \emph{and} Flat Minima Generalize Better
+        \\
+        \large
+        2020-01-10
+    \end{center}
+
+    Prior work has varyingly found that \emph{sharp} minima generalize better
+    (after all, $l^2$ regularization increases curvature) or that \emph{flat}
+    minima generalize better (after all, flat minima are more robust to small
+    displacements in weight space).  We reconcile these competing intuitions by
+    showing how the relationship of generalization and curvature depends on the
+    learning task's noise structure.  METRIC.  In doing so, we offer a modern
+    derivation of the Takeuchi Information Criterion (TIC), a generalization of
+    the Akaike Information Criterion (AIC) that to our knowledge has not been
+    derived in the English language literature.  Because the TIC estimates a
+    smooth hypothesis class's generalization gap, it is tempting to use it as an
+    additive regularization term.  However, the TIC is singular where the
+    hessian is, and as such gives insensible results for over-parameterized
+    models.  We explain these singularities and explain how the implicit
+    regularization of gradient descent both allows and necessitates a
+    singularity-removing correction to the TIC.  METRIC.  We propose this
+    \emph{Stabilized TIC} (STIC) as a regularizing term to enable the tuning of
+    smooth hyperparameters by gradient descent.  We give bounds on
+    generalization performance and validate on classic datasets.  
+\end{document}
